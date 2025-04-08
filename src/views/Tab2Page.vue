@@ -7,7 +7,6 @@
     </ion-header>
     <ion-content :fullscreen="true">
       
-      <!-- Mostrar fotos en una cuadrícula -->
       <ion-grid>
         <ion-row>
           <ion-col size="6" v-for="photo in photos" :key="photo.filepath">

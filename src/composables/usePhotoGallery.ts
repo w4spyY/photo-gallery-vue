@@ -8,10 +8,8 @@ export interface UserPhoto {
   webviewPath?: string;
 }
 
-// Clau per Preferences
 const PHOTO_STORAGE = 'photos';
 
-// Convertir blob a base64
 const convertBlobToBase64 = (blob: Blob) =>
   new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -76,10 +74,8 @@ export const usePhotoGallery = () => {
     photos.value = photosInPreferences;
   };
 
-  // Guarda automàticament quan canvii la matriu de fotos
   watch(photos, cachePhotos);
 
-  // Carrega les fotos quan es munta la galeria
   onMounted(loadSaved);
 
   return {
